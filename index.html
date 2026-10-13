@@ -284,3 +284,265 @@
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-cyan);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background-color: var(--accent-cyan);
+            color: #0f172a;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-cyan-hover);
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-slate);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .card-showcase {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .quote-form {
+                grid-template-columns: 1fr;
+            }
+            .form-full, .submit-btn {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Top Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="brand-left">
+                <!-- SVG House with Wrench Icon -->
+                <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 50L50 20L85 50V80H15V50Z" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="42" y="30" width="16" height="12" fill="#FFFFFF" />
+                    <rect x="38" y="58" width="16" height="22" fill="#FFFFFF" />
+                    <path d="M40 82L80 42C83 39 88 39 91 42C94 45 94 50 91 53L51 93C48 96 43 96 40 93L35 88L40 82Z" fill="#FFFFFF" stroke="#384652" stroke-width="2"/>
+                    <circle cx="82" cy="46" r="4" fill="#384652"/>
+                </svg>
+                <div class="brand-text">
+                    <h1>Ryan's Repair</h1>
+                    <p>Handyman & Mechanical Services</p>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#info">Locations & Hours</a>
+                <a href="#quote" class="nav-btn">Instant Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Digital Business Card Card Section -->
+        <div class="card-showcase">
+            <div class="card-info">
+                <!-- SVG House & Wrench Banner -->
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 50L50 20L85 50V80H15V50Z" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="42" y="30" width="16" height="12" fill="#38bdf8" />
+                        <rect x="38" y="58" width="16" height="22" fill="#38bdf8" />
+                        <path d="M40 82L80 42C83 39 88 39 91 42C94 45 94 50 91 53L51 93C48 96 43 96 40 93L35 88L40 82Z" fill="#38bdf8" stroke="#384652" stroke-width="2"/>
+                        <circle cx="82" cy="46" r="4" fill="#384652"/>
+                    </svg>
+                    <div>
+                        <h2>RYAN'S REPAIR</h2>
+                        <p class="subtitle">Handyman & Mechanical Services</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <p><strong>Ryan Foster</strong> | Owner & Technician</p>
+                    <p>Cell: <strong>(408) 722-6528</strong></p>
+                    <p>Email: <strong>ryansrepairmh@gmail.com</strong></p>
+                    <p>Location: <strong>Morgan Hill, CA</strong></p>
+                </div>
+            </div>
+
+            <!-- Exact Mirrored RR Geometric Monogram Circle Logo -->
+            <div class="card-logo-right">
+                <svg width="110" height="110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" stroke="#FFFFFF" stroke-width="1.5"/>
+                    <polygon points="50,6 91,28 91,72 50,94 9,72 9,28" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+                    <!-- Mirrored Left R -->
+                    <path d="M50 32 V68 M50 32 H38 C32 32 30 38 30 42 C30 48 34 50 50 50 M38 50 L26 68" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Right R -->
+                    <path d="M50 32 V68 M50 32 H62 C68 32 70 38 70 42 C70 48 66 50 50 50 M62 50 L74 68" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Specialized Services Grid -->
+        <div id="services" class="section-header">
+            <h2>Specialized Handyman & Repair Services</h2>
+        </div>
+
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <h3>⚡ Light Electrical & Lighting</h3>
+                <ul>
+                    <li>Outlets, switches & dimmers</li>
+                    <li>Ceiling fans & light fixtures</li>
+                    <li>EV charger installations</li>
+                    <li>Sub-panel work & low voltage</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>🚰 Plumbing & HVAC</h3>
+                <ul>
+                    <li>Faucets, sinks & disposals</li>
+                    <li>Drain line clears & leak repairs</li>
+                    <li>Thermostats & water heaters</li>
+                    <li>A/C & furnace basic servicing</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>🏊 Pool Equip. & Hot Tub</h3>
+                <ul>
+                    <li>Pump motor replacement</li>
+                    <li>Filter system cleaning & repairs</li>
+                    <li>Pool heater diagnostics</li>
+                    <li>Timers & plumbing maintenance</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>🚗 Auto Maintenance</h3>
+                <ul>
+                    <li>Oil & filter changes</li>
+                    <li>Brake pads & rotor servicing</li>
+                    <li>Battery replacement & testing</li>
+                    <li>Coolant flushes & minor diagnostics</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>🧊 Home Appliance Repair</h3>
+                <ul>
+                    <li>Ice maker diagnostics & fill lines</li>
+                    <li>Refrigerator & freezer service</li>
+                    <li>Dryer & washing machine repairs</li>
+                    <li>Garbage disposals & dishwashers</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>🖥️ Home IT, TV & Audio</h3>
+                <ul>
+                    <li>Smart home setup & WiFi network</li>
+                    <li>Wall TV mounting & wire hiding</li>
+                    <li>PC repair & home theater setup</li>
+                    <li>Projectors & receiver integration</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Primary Locations & Hours -->
+        <div id="info" class="section-header">
+            <h2>Service Area & Operating Hours</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>📍 Primary Service Locations</h3>
+                <ul>
+                    <li>• <strong>Morgan Hill, CA</strong> (Base Location)</li>
+                    <li>• Gilroy, CA</li>
+                    <li>• San Martin, CA</li>
+                    <li>• South San Jose & Surrounding South County</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>⏰ Operating Hours</h3>
+                <ul>
+                    <li>• <strong>Weekdays:</strong> After 3:30 PM (Evening Service)</li>
+                    <li>• <strong>Weekends:</strong> Full Day Availability</li>
+                    <li>• Flexible scheduling for scheduled repair projects</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Request Quote Form -->
+        <div id="quote" class="quote-container">
+            <h2 style="color: var(--text-white); text-transform: uppercase; margin-bottom: 5px;">Request a Service Quote</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Fill out your details below to launch a pre-filled quote email directly from your mail app.</p>
+            
+            <form class="quote-form" onsubmit="sendQuoteEmail(event)">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="clientName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="clientPhone" placeholder="(408) 555-0199" required>
+                </div>
+                <div class="form-group form-full">
+                    <label>Service Category</label>
+                    <select id="serviceCategory" required>
+                        <option value="Light Electrical">Light Electrical & Lighting</option>
+                        <option value="Plumbing & HVAC">Plumbing & HVAC</option>
+                        <option value="Pool & Hot Tub">Pool Equip. & Mechanics</option>
+                        <option value="Auto Maintenance">Auto Maintenance</option>
+                        <option value="Appliance Repair">Home Appliance Repair</option>
+                        <option value="Home IT & Audio">Home IT, TV & Audio</option>
+                        <option value="General Handyman">Other / General Repair</option>
+                    </select>
+                </div>
+                <div class="form-group form-full">
+                    <label>Description of Issue / Project</label>
+                    <textarea id="projectDetails" rows="4" placeholder="Describe what you need fixed or installed..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">✉️ Send Quote Request Email</button>
+            </form>
+        </div>
+
+        <footer>
+            <p>© Ryan's Repair • Morgan Hill, CA • Independent Owner-Operated Business</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function sendQuoteEmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const category = document.getElementById('serviceCategory').value;
+            const details = document.getElementById('projectDetails').value;
+
+            const subject = encodeURIComponent(`Service Quote Request - ${category} (${name})`);
+            const body = encodeURIComponent(`Hi Ryan,\n\nI would like to request a quote for repair services:\n\nName: ${name}\nPhone: ${phone}\nService Category: ${category}\n\nProject Details:\n${details}\n\nThank you!`);
+
+            window.location.href = `mailto:foster.ryan89@gmail.com?subject=${subject}&body=${body}`;
+        }
+    </script>
+
+</body>
+</html>
