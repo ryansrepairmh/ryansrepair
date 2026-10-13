@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan's Repair | Professional Repair & Technical Services in Morgan Hill</title>
+    <title>Ryan's Repair | Handyman & Mechanical Services | Morgan Hill, CA</title>
     <style>
         :root {
-            --bg-card-blue: #384652;
+            --bg-slate: #384652;
             --bg-darker: #2b3640;
             --bg-card: #2f3d48;
-            --text-main: #f1f5f9;
+            --text-white: #ffffff;
+            --text-light: #e2e8f0;
             --text-muted: #94a3b8;
-            --accent-blue: #38bdf8;
-            --accent-blue-hover: #0284c7;
-            --border-color: #475569;
+            --accent-cyan: #38bdf8;
+            --accent-cyan-hover: #0284c7;
+            --border-slate: #475569;
         }
 
         * {
@@ -24,252 +25,419 @@
         }
 
         body {
-            background-color: var(--bg-card-blue);
-            color: var(--text-main);
+            background-color: var(--bg-slate);
+            color: var(--text-light);
             line-height: 1.6;
-            padding-bottom: 40px;
+            scroll-behavior: smooth;
         }
 
+        /* Top Navigation Header */
         header {
             background-color: var(--bg-darker);
-            border-bottom: 2px solid var(--border-color);
-            padding: 20px 15px;
-            text-align: center;
+            border-bottom: 2px solid var(--border-slate);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 12px 20px;
         }
 
-        .header-brand {
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .brand-left {
+            display: flex;
+            align-items: center;
             gap: 12px;
-            margin-bottom: 8px;
         }
 
-        /* Geometric RR Monogram Logo */
-        .rr-logo {
-            background: linear-gradient(135deg, #1e293b, #334155);
-            border: 2px solid var(--accent-blue);
-            color: var(--accent-blue);
-            font-weight: 800;
-            font-size: 1.4rem;
-            letter-spacing: -1px;
-            width: 46px;
-            height: 46px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
-
-        /* House with Wrench Icon Badge */
-        .icon-badge {
-            background-color: rgba(56, 189, 248, 0.15);
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 6px;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            color: #ffffff;
-            font-weight: 700;
+        .brand-text h1 {
+            font-size: 1.3rem;
+            color: var(--text-white);
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        .tagline {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .brand-text p {
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .nav-btn {
+            background-color: var(--accent-cyan);
+            color: #0f172a !important;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700 !important;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 15px;
+            padding: 30px 15px;
         }
 
-        .bio-section {
+        /* Business Card Replica Banner */
+        .card-showcase {
             background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-slate);
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 25px;
+            margin-bottom: 35px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 25px;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        .bio-section h2 {
-            color: var(--accent-blue);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            color: var(--accent-blue);
-            font-size: 1.4rem;
-            margin: 30px 0 15px 0;
-            text-align: center;
-            text-transform: uppercase;
+        .card-info h2 {
+            font-size: 2rem;
+            color: var(--text-white);
+            margin-bottom: 2px;
             letter-spacing: 1px;
         }
 
-        /* 6-Category Grid Layout */
+        .card-info .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .card-details p {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--text-light);
+        }
+
+        .card-details strong {
+            color: var(--accent-cyan);
+        }
+
+        .card-logo-right {
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Section Styling */
+        .section-header {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .section-header h2 {
+            color: var(--text-white);
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--accent-cyan);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* 6 Grid Services Layout */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .service-card {
             background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-slate);
             border-radius: 10px;
             padding: 20px;
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .service-card:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-2px);
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
         }
 
         .service-card h3 {
-            color: #ffffff;
-            font-size: 1.15rem;
-            margin-bottom: 10px;
+            color: var(--text-white);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             padding-bottom: 8px;
         }
 
         .service-card ul {
-            list-style-type: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            list-style: none;
         }
 
         .service-card li {
+            font-size: 0.92rem;
+            color: var(--text-muted);
             margin-bottom: 6px;
+            padding-left: 16px;
             position: relative;
-            padding-left: 15px;
         }
 
         .service-card li::before {
             content: "•";
-            color: var(--accent-blue);
+            color: var(--accent-cyan);
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
-        .contact-box {
+        /* Info Twin Grid (Locations & Hours) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .info-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-slate);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .info-card h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Quote Request Form Section */
+        .quote-container {
             background-color: var(--bg-darker);
-            border: 2px solid var(--accent-blue);
+            border: 2px solid var(--accent-cyan);
             border-radius: 12px;
-            padding: 25px;
-            margin-top: 35px;
-            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
         }
 
-        .contact-box h2 {
-            color: #ffffff;
-            margin-bottom: 10px;
+        .quote-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-blue);
+        .form-full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--bg-slate);
+            border: 1px solid var(--border-slate);
+            border-radius: 6px;
+            color: var(--text-white);
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background-color: var(--accent-cyan);
             color: #0f172a;
-            font-weight: 700;
-            padding: 12px 24px;
+            border: none;
+            padding: 14px;
             border-radius: 8px;
-            text-decoration: none;
-            margin: 10px 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
             transition: background-color 0.2s ease;
         }
 
-        .btn:hover {
-            background-color: var(--accent-blue-hover);
+        .submit-btn:hover {
+            background-color: var(--accent-cyan-hover);
             color: #ffffff;
         }
 
         footer {
             text-align: center;
+            padding: 30px 15px;
             color: var(--text-muted);
             font-size: 0.85rem;
-            margin-top: 30px;
+            border-top: 1px solid var(--border-slate);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .card-showcase {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .quote-form {
+                grid-template-columns: 1fr;
+            }
+            .form-full, .submit-btn {
+                grid-column: span 1;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Sticky Top Navigation -->
     <header>
-        <div class="header-brand">
-            <div class="rr-logo">RR</div>
-            <h1>Ryan's Repair</h1>
+        <div class="nav-container">
+            <div class="brand-left">
+                <!-- SVG House with Wrench Icon -->
+                <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 50L50 20L85 50V80H15V50Z" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="42" y="30" width="16" height="12" fill="#FFFFFF" />
+                    <rect x="38" y="58" width="16" height="22" fill="#FFFFFF" />
+                    <path d="M40 82L80 42C83 39 88 39 91 42C94 45 94 50 91 53L51 93C48 96 43 96 40 93L35 88L40 82Z" fill="#FFFFFF" stroke="#384652" stroke-width="2"/>
+                    <circle cx="82" cy="46" r="4" fill="#384652"/>
+                </svg>
+                <div class="brand-text">
+                    <h1>Ryan's Repair</h1>
+                    <p>Handyman & Mechanical Services</p>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#info">Locations & Hours</a>
+                <a href="#quote" class="nav-btn">Instant Quote</a>
+            </nav>
         </div>
-        <div class="icon-badge">
-            <span>🏠🔧</span> Handyman & Mechanical Services
-        </div>
-        <p class="tagline" style="margin-top: 8px;">Morgan Hill & South County • Independent Technical Repairs</p>
     </header>
 
     <div class="container">
 
-        <section class="bio-section">
-            <h2>About Ryan's Repair</h2>
-            <p>Reliable, local repair and technical service based in Morgan Hill, CA. Specialized in hands-on mechanical, electrical, plumbing, home automation, and vehicle maintenance with professional attention to detail and honest pricing.</p>
-            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--accent-blue);"><strong>Availability:</strong> Weekdays after 3:30 PM & Full Weekends</p>
-        </section>
+        <!-- Digital Business Card Card Section -->
+        <div class="card-showcase">
+            <div class="card-info">
+                <!-- SVG House & Wrench Banner -->
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 50L50 20L85 50V80H15V50Z" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="42" y="30" width="16" height="12" fill="#38bdf8" />
+                        <rect x="38" y="58" width="16" height="22" fill="#38bdf8" />
+                        <path d="M40 82L80 42C83 39 88 39 91 42C94 45 94 50 91 53L51 93C48 96 43 96 40 93L35 88L40 82Z" fill="#38bdf8" stroke="#384652" stroke-width="2"/>
+                        <circle cx="82" cy="46" r="4" fill="#384652"/>
+                    </svg>
+                    <div>
+                        <h2>RYAN'S REPAIR</h2>
+                        <p class="subtitle">Handyman & Mechanical Services</p>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <p><strong>Ryan Foster</strong> | Owner & Technician</p>
+                    <p>Cell: <strong>(408) 722-6528</strong></p>
+                    <p>Email: <strong>foster.ryan89@gmail.com</strong></p>
+                    <p>Location: <strong>Morgan Hill, CA</strong></p>
+                </div>
+            </div>
 
-        <h2 class="section-title">Our Services</h2>
+            <!-- Exact Mirrored RR Geometric Monogram Circle Logo -->
+            <div class="card-logo-right">
+                <svg width="110" height="110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" stroke="#FFFFFF" stroke-width="1.5"/>
+                    <polygon points="50,6 91,28 91,72 50,94 9,72 9,28" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+                    <!-- Mirrored Left R -->
+                    <path d="M50 32 V68 M50 32 H38 C32 32 30 38 30 42 C30 48 34 50 50 50 M38 50 L26 68" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Right R -->
+                    <path d="M50 32 V68 M50 32 H62 C68 32 70 38 70 42 C70 48 66 50 50 50 M62 50 L74 68" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Specialized Services Grid -->
+        <div id="services" class="section-header">
+            <h2>Specialized Handyman & Repair Services</h2>
+        </div>
 
         <div class="services-grid">
             
             <div class="service-card">
-                <h3>⚡ Electrical</h3>
+                <h3>⚡ Light Electrical & Lighting</h3>
                 <ul>
-                    <li>Outlets, switches & light fixtures</li>
+                    <li>Outlets, switches & dimmers</li>
+                    <li>Ceiling fans & light fixtures</li>
                     <li>EV charger installations</li>
-                    <li>Breaker sub-panel work</li>
-                    <li>Low voltage & landscape lighting</li>
+                    <li>Sub-panel work & low voltage</li>
                 </ul>
             </div>
 
             <div class="service-card">
                 <h3>🚰 Plumbing & HVAC</h3>
                 <ul>
-                    <li>Pipe leak diagnostics & repairs</li>
-                    <li>Faucet, sink & toilet replacement</li>
-                    <li>Water heater servicing</li>
-                    <li>A/C & furnace maintenance</li>
+                    <li>Faucets, sinks & disposals</li>
+                    <li>Drain line clears & leak repairs</li>
+                    <li>Thermostats & water heaters</li>
+                    <li>A/C & furnace basic servicing</li>
                 </ul>
             </div>
 
             <div class="service-card">
-                <h3>🏊 Pool & Hot Tub</h3>
+                <h3>🏊 Pool Equip. & Hot Tub</h3>
                 <ul>
-                    <li>Pump motor replacement & repairs</li>
-                    <li>Filter system cleaning & service</li>
+                    <li>Pump motor replacement</li>
+                    <li>Filter system cleaning & repairs</li>
                     <li>Pool heater diagnostics</li>
-                    <li>Timer & plumbing maintenance</li>
+                    <li>Timers & plumbing maintenance</li>
                 </ul>
             </div>
 
             <div class="service-card">
                 <h3>🚗 Auto Maintenance</h3>
                 <ul>
-                    <li>Oil changes & filter replacements</li>
+                    <li>Oil & filter changes</li>
                     <li>Brake pads & rotor servicing</li>
                     <li>Battery replacement & testing</li>
-                    <li>Coolant flushes & light diagnostics</li>
+                    <li>Coolant flushes & minor diagnostics</li>
                 </ul>
             </div>
 
@@ -277,36 +445,104 @@
                 <h3>🧊 Home Appliance Repair</h3>
                 <ul>
                     <li>Ice maker diagnostics & fill lines</li>
-                    <li>Refrigerator & freezer repairs</li>
-                    <li>Dryer & washing machine service</li>
+                    <li>Refrigerator & freezer service</li>
+                    <li>Dryer & washing machine repairs</li>
                     <li>Garbage disposals & dishwashers</li>
                 </ul>
             </div>
 
             <div class="service-card">
-                <h3>🖥️ Home IT & AV</h3>
+                <h3>🖥️ Home IT, TV & Audio</h3>
                 <ul>
-                    <li>Wall TV mounting & wire concealment</li>
-                    <li>Surround sound & home theater</li>
-                    <li>Network rack wiring & Wi-Fi setup</li>
+                    <li>Smart home setup & WiFi network</li>
+                    <li>Wall TV mounting & wire hiding</li>
+                    <li>PC repair & home theater setup</li>
                     <li>Projectors & receiver integration</li>
                 </ul>
             </div>
 
         </div>
 
-        <div class="contact-box">
-            <h2>Need a Service Quote?</h2>
-            <p style="color: var(--text-muted); margin-bottom: 15px;">Send an email or request a quick estimate directly from your phone.</p>
+        <!-- Primary Locations & Hours -->
+        <div id="info" class="section-header">
+            <h2>Service Area & Operating Hours</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>📍 Primary Service Locations</h3>
+                <ul>
+                    <li>• <strong>Morgan Hill, CA</strong> (Base Location)</li>
+                    <li>• Gilroy, CA</li>
+                    <li>• San Martin, CA</li>
+                    <li>• South San Jose & Surrounding South County</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>⏰ Operating Hours</h3>
+                <ul>
+                    <li>• <strong>Weekdays:</strong> After 3:30 PM (Evening Service)</li>
+                    <li>• <strong>Weekends:</strong> Full Day Availability</li>
+                    <li>• Flexible scheduling for scheduled repair projects</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Request Quote Form -->
+        <div id="quote" class="quote-container">
+            <h2 style="color: var(--text-white); text-transform: uppercase; margin-bottom: 5px;">Request a Service Quote</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Fill out your details below to launch a pre-filled quote email directly from your mail app.</p>
             
-            <a href="mailto:ryansrepairmh@gmail.com?subject=Service%20Quote%20Request%20-%20Ryan's%20Repair&body=Hi%20Ryan,%0A%0AHere%20are%20the%20details%20for%20my%20repair%20request:%0A%0AName:%0APhone:%0AService%20Needed:%0ADescription%20of%20Issue:%0A" class="btn">Send Request Email</a>
+            <form class="quote-form" onsubmit="sendQuoteEmail(event)">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="clientName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="clientPhone" placeholder="(408) 555-0199" required>
+                </div>
+                <div class="form-group form-full">
+                    <label>Service Category</label>
+                    <select id="serviceCategory" required>
+                        <option value="Light Electrical">Light Electrical & Lighting</option>
+                        <option value="Plumbing & HVAC">Plumbing & HVAC</option>
+                        <option value="Pool & Hot Tub">Pool Equip. & Mechanics</option>
+                        <option value="Auto Maintenance">Auto Maintenance</option>
+                        <option value="Appliance Repair">Home Appliance Repair</option>
+                        <option value="Home IT & Audio">Home IT, TV & Audio</option>
+                        <option value="General Handyman">Other / General Repair</option>
+                    </select>
+                </div>
+                <div class="form-group form-full">
+                    <label>Description of Issue / Project</label>
+                    <textarea id="projectDetails" rows="4" placeholder="Describe what you need fixed or installed..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">✉️ Send Quote Request Email</button>
+            </form>
         </div>
 
         <footer>
-            <p>© Ryan's Repair • Morgan Hill, CA • Fully Independent Owner-Operated Business</p>
+            <p>© Ryan's Repair • Morgan Hill, CA • Independent Owner-Operated Business</p>
         </footer>
 
     </div>
+
+    <script>
+        function sendQuoteEmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const category = document.getElementById('serviceCategory').value;
+            const details = document.getElementById('projectDetails').value;
+
+            const subject = encodeURIComponent(`Service Quote Request - ${category} (${name})`);
+            const body = encodeURIComponent(`Hi Ryan,\n\nI would like to request a quote for repair services:\n\nName: ${name}\nPhone: ${phone}\nService Category: ${category}\n\nProject Details:\n${details}\n\nThank you!`);
+
+            window.location.href = `mailto:foster.ryan89@gmail.com?subject=${subject}&body=${body}`;
+        }
+    </script>
 
 </body>
 </html>
